@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Privacy · Model Finder</title>
+<meta name="description" content="Model Finder runs on your computer. Indigloo receives none of your data. 10 of 11 MCP tools make no network calls; the opt-in modelfinder_run_eval calls only the providers you pick.">
+<link rel="canonical" href="https://modelfinder.indigloo.co/privacy.html">
+<meta name="theme-color" content="#f3f0e8">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="240x240" href="assets/img/thumbnail-240.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Model Finder by Indigloo">
+<meta property="og:title" content="Privacy · Model Finder">
+<meta property="og:description" content="Model Finder runs on your computer. Indigloo receives none of your data. 10 of 11 MCP tools make no network calls; the opt-in modelfinder_run_eval calls only the providers you pick.">
+<meta property="og:url" content="https://modelfinder.indigloo.co/privacy.html">
+<meta property="og:image" content="https://modelfinder.indigloo.co/assets/img/gallery-01-hero.png">
+<meta property="og:image:width" content="1270">
+<meta property="og:image:height" content="760">
+<meta property="og:image:alt" content="Model Finder: find the cheapest AI model that passes your own tests. A dot field showing the cheapest model that passes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy · Model Finder">
+<meta name="twitter:description" content="Model Finder runs on your computer. Indigloo receives none of your data. 10 of 11 MCP tools make no network calls; the opt-in modelfinder_run_eval calls only the providers you pick.">
+<meta name="twitter:image" content="https://modelfinder.indigloo.co/assets/img/gallery-01-hero.png">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Model Finder by Indigloo, home">
+      <img src="assets/img/mark-128.png" srcset="assets/img/mark-128.png 1x, assets/img/mark-256.png 2x" width="40" height="19" alt="">
+      <span class="brand-name">Model Finder</span>
+      <span class="brand-by">by Indigloo</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#how">How it works</a></li>
+        <li><a href="index.html#privacy" aria-current="page">Privacy</a></li>
+        <li><a href="index.html#install">Install</a></li>
+        <li><a href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a class="btn btn-primary" href="index.html#install"><span class="dot" aria-hidden="true"></span>Get started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="doc">
+  <div class="wrap doc-grid">
+    <aside class="doc-aside">
+      <p class="label"><span class="sig">Model Finder</span> / Privacy</p>
+      <nav aria-label="Legal"><ul><li><a href="privacy.html" aria-current="page">Privacy</a></li><li><a href="security.html">Security</a></li><li><a href="terms.html">Terms</a></li><li><a href="https://github.com/Abhiindigloo/EvalHarness/blob/main/PRIVACY.md" rel="noopener">Source on GitHub ↗</a></li></ul></nav>
+    </aside>
+    <article>
+      <h1>Simple by design.</h1>
+      <p class="label meta">Effective 19 October 2026 · Applies to Model Finder 1.3.x and this website</p>
+      <div class="summary">
+      <ul>
+      <li>Model Finder runs on your own computer. <strong>Indigloo does not receive, store or see any data you use with it.</strong></li>
+      <li>No accounts, no sign-in, no telemetry, no analytics, no cookies, no advertising.</li>
+      <li>The local MCP server needs no API keys, writes no files and never logs what you send it. Ten of its eleven tools make no network connections.</li>
+      <li>The one exception is the opt-in <code>modelfinder_run_eval</code> tool. Only when it is called with <code>confirm: true</code> does it send your eval examples, and only to the model providers you list, using your API keys from environment variables.</li>
+      </ul>
+      </div>
+      <p>Model Finder is published by Indigloo Softwares Private Limited ("Indigloo", "we"), a company incorporated in India. This page summarises the full <a href="https://github.com/Abhiindigloo/EvalHarness/blob/main/PRIVACY.md" rel="noopener">privacy policy in the repository</a>, which takes precedence if the two differ.</p>
+
+      <h2>What the software processes</h2>
+      <div class="table-scroll"><table>
+      <thead><tr><th>Component</th><th>Where data goes</th><th>Kept by Indigloo</th></tr></thead>
+      <tbody>
+      <tr><td>Agent Skills</td><td>To your AI assistant and its provider, under that assistant's terms</td><td>Nothing</td></tr>
+      <tr><td>MCP server, ten read-only tools</td><td>Results go back to your assistant only. No network connection is made</td><td>Nothing</td></tr>
+      <tr><td><code>modelfinder_run_eval</code> (opt-in)</td><td>Eval examples go only to the providers of the models you list, with your keys, after you confirm. Optionally downloads LiteLLM's public price list (nothing about you is sent)</td><td>Nothing</td></tr>
+      <tr><td>Eval script and generated router</td><td>Only to the providers you configure, when you run them</td><td>Nothing</td></tr>
+      <tr><td>Cost and memory calculators</td><td>Nowhere; calculated locally</td><td>Nothing</td></tr>
+      </tbody></table></div>
+
+      <h2>Data minimisation</h2>
+      <ul>
+      <li>Repository tools read only inside your workspace and refuse a filesystem root or home folder.</li>
+      <li>They skip secret-like files (<code>.env</code>, keys, certificates, credentials and tokens), dependency folders and symbolic links.</li>
+      <li><code>modelfinder_audit_models</code> returns model IDs, file names and line numbers, never line content.</li>
+      <li>Drafted eval examples that contain detected personal data or secrets are dropped. The sensitive-data scan reports categories and counts, never values.</li>
+      <li>Eval runs are blocked when examples contain detected personal data unless you explicitly allow it. API keys are never sent as content, printed or written to disk.</li>
+      </ul>
+
+      <h2>This website</h2>
+      <p>This is a static site. It sets no cookies, runs no analytics or third-party scripts, and loads every font, image and video from its own origin. Its script only handles the menu, animations, tabs and copy buttons; it makes no network requests and stores nothing. Our hosting provider may process standard request logs (such as IP address and user agent) to serve and protect the site.</p>
+
+      <h2>What Indigloo collects</h2>
+      <p><strong>Through the software: nothing.</strong> Indigloo runs no server, API or hosted service for Model Finder. If you open an issue, discussion or pull request on GitHub, we receive what you post and your GitHub username, and use it only to respond and improve the software. Package registries and marketplaces may record downloads under their own policies. We do not sell or share personal data, and we do not use it for advertising or AI training.</p>
+
+      <h2>Third parties you choose</h2>
+      <p>When you configure a model provider, your prompts go to that provider using your account, and its terms apply, including retention and training rules. Check them before sending real data. Your organisation decides what is sent and why, and is responsible for its legal basis under laws such as India's Digital Personal Data Protection Act 2023.</p>
+
+      <h2>Contact</h2>
+      <p>Open an <a href="https://github.com/Abhiindigloo/EvalHarness/issues" rel="noopener">issue on GitHub</a> asking for a private channel, without including personal details. For security matters use private vulnerability reporting; see <a href="security.html">Security</a>.</p>
+    </article>
+  </div>
+</main>
+<footer class="site-footer on-ink">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Model Finder by Indigloo, home">
+          <img src="assets/img/mark-128.png" srcset="assets/img/mark-128.png 1x, assets/img/mark-256.png 2x" width="40" height="19" alt="">
+          <span class="brand-name">Model Finder</span>
+          <span class="brand-by">by Indigloo</span>
+        </a>
+        <p>A free, local MCP server and Agent Skills that find the cheapest AI model passing your own tests. Open source, MIT licensed.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#install">Install</a></li>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness#readme" rel="noopener">Documentation ↗</a></li>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness/blob/main/CHANGELOG.md" rel="noopener">Changelog ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get it</h2>
+        <ul>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://pypi.org/project/model-finder-mcp/" rel="noopener">PyPI ↗</a></li>
+          <li><a href="https://registry.modelcontextprotocol.io/v0/servers?search=co.indigloo" rel="noopener">MCP Registry ↗</a></li>
+          <li><a href="https://cursor.directory/plugins/model-finder" rel="noopener">Cursor Directory ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Indigloo</h2>
+        <ul>
+          <li><a href="https://indigloo.co" rel="noopener">indigloo.co ↗</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span class="label">© <span id="year">2026</span> Indigloo Softwares Private Limited · MIT License</span>
+      <span class="label">No cookies · No analytics · No trackers on this site</span>
+    </div>
+  </div>
+</footer>
+<p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+</body>
+</html>

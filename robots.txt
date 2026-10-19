@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://modelfinder.indigloo.co/sitemap.xml

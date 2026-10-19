@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Security · Model Finder</title>
+<meta name="description" content="How Model Finder protects keys and data: local stdio MCP server, no dependencies, HTTPS only, refused redirects, opt-in network tool with call caps.">
+<link rel="canonical" href="https://modelfinder.indigloo.co/security.html">
+<meta name="theme-color" content="#f3f0e8">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="240x240" href="assets/img/thumbnail-240.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Model Finder by Indigloo">
+<meta property="og:title" content="Security · Model Finder">
+<meta property="og:description" content="How Model Finder protects keys and data: local stdio MCP server, no dependencies, HTTPS only, refused redirects, opt-in network tool with call caps.">
+<meta property="og:url" content="https://modelfinder.indigloo.co/security.html">
+<meta property="og:image" content="https://modelfinder.indigloo.co/assets/img/gallery-01-hero.png">
+<meta property="og:image:width" content="1270">
+<meta property="og:image:height" content="760">
+<meta property="og:image:alt" content="Model Finder: find the cheapest AI model that passes your own tests. A dot field showing the cheapest model that passes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Security · Model Finder">
+<meta name="twitter:description" content="How Model Finder protects keys and data: local stdio MCP server, no dependencies, HTTPS only, refused redirects, opt-in network tool with call caps.">
+<meta name="twitter:image" content="https://modelfinder.indigloo.co/assets/img/gallery-01-hero.png">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Model Finder by Indigloo, home">
+      <img src="assets/img/mark-128.png" srcset="assets/img/mark-128.png 1x, assets/img/mark-256.png 2x" width="40" height="19" alt="">
+      <span class="brand-name">Model Finder</span>
+      <span class="brand-by">by Indigloo</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#how">How it works</a></li>
+        <li><a href="index.html#privacy">Privacy</a></li>
+        <li><a href="index.html#install">Install</a></li>
+        <li><a href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a class="btn btn-primary" href="index.html#install"><span class="dot" aria-hidden="true"></span>Get started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="doc">
+  <div class="wrap doc-grid">
+    <aside class="doc-aside">
+      <p class="label"><span class="sig">Model Finder</span> / Security</p>
+      <nav aria-label="Legal"><ul><li><a href="privacy.html">Privacy</a></li><li><a href="security.html" aria-current="page">Security</a></li><li><a href="terms.html">Terms</a></li><li><a href="https://github.com/Abhiindigloo/EvalHarness/blob/main/SECURITY.md" rel="noopener">Source on GitHub ↗</a></li></ul></nav>
+    </aside>
+    <article>
+      <h1>Keep your data close.</h1>
+      <p class="label meta">Supported: 1.3.x (latest) · Report privately via GitHub</p>
+      <p>Model Finder is designed so that the safe thing is the default: a local MCP server with no dependencies, read-only tools that never touch the network, and a single opt-in tool that cannot spend money without your explicit confirmation.</p>
+
+      <h2>Report a vulnerability</h2>
+      <p><strong>Please do not open a public issue for a security problem.</strong> Use GitHub private vulnerability reporting: the repository's <a href="https://github.com/Abhiindigloo/EvalHarness/security" rel="noopener">Security tab</a> → <em>Report a vulnerability</em>. Include the version, the component, steps to reproduce and expected impact. Use placeholders, never real API keys or personal data.</p>
+      <p>Best effort: acknowledgement within 5 business days, initial assessment within 10, and coordinated disclosure within 90 days. Good-faith research on your own installations is welcome under safe harbour.</p>
+
+      <h2>MCP server</h2>
+      <ul>
+      <li>Local stdio only. It writes no files and never logs tool arguments.</li>
+      <li>Ten tools are read-only and offline: they open no network connections, read no API keys and declare <code>readOnlyHint: true</code> and <code>openWorldHint: false</code>.</li>
+      <li><code>modelfinder_run_eval</code> is opt-in and declares <code>openWorldHint: true</code>. It calls nothing unless <code>confirm</code> is true, runs only the models you list, refuses runs over <code>max_calls</code> (default 50, hard limit 200), and connects only to those providers' endpoints, plus LiteLLM's public price file when you ask for it.</li>
+      <li>Repository tools stay inside the workspace, refuse the filesystem root and home directory, do not follow symlinks, skip secret-like files and cap files at 1 MB and 5,000 files.</li>
+      </ul>
+
+      <h2>Keys and transport</h2>
+      <ul>
+      <li>Keys are read only from environment variables named in configs. Configs that embed keys, tokens or secrets are rejected. Keys are never printed or written to disk, and are scrubbed from provider errors.</li>
+      <li>HTTPS is required; plain HTTP is allowed only for loopback hosts (local runtimes). Redirects are refused, so credentials are never forwarded to another host.</li>
+      <li>Response bodies, inputs and pattern lengths are capped.</li>
+      </ul>
+
+      <h2>Supply chain</h2>
+      <ul>
+      <li>Python standard library only: the PyPI package has no dependencies.</li>
+      <li>GitHub Actions are pinned to commit SHAs. Releases publish to PyPI with trusted publishing (no stored token) and to the MCP Registry under the verified <code>co.indigloo</code> namespace.</li>
+      <li>Skills are plain Markdown with no hidden, encoded or remotely fetched instructions.</li>
+      </ul>
+
+      <h2>This website</h2>
+      <p>A static site with a strict Content Security Policy: scripts, styles, fonts, images and video load only from this origin, with no inline script, no third-party code and no forms. It has no accounts, cookies or storage.</p>
+      <p>Full details: <a href="https://github.com/Abhiindigloo/EvalHarness/blob/main/SECURITY.md" rel="noopener">SECURITY.md</a>.</p>
+    </article>
+  </div>
+</main>
+<footer class="site-footer on-ink">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Model Finder by Indigloo, home">
+          <img src="assets/img/mark-128.png" srcset="assets/img/mark-128.png 1x, assets/img/mark-256.png 2x" width="40" height="19" alt="">
+          <span class="brand-name">Model Finder</span>
+          <span class="brand-by">by Indigloo</span>
+        </a>
+        <p>A free, local MCP server and Agent Skills that find the cheapest AI model passing your own tests. Open source, MIT licensed.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#install">Install</a></li>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness#readme" rel="noopener">Documentation ↗</a></li>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness/blob/main/CHANGELOG.md" rel="noopener">Changelog ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get it</h2>
+        <ul>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://pypi.org/project/model-finder-mcp/" rel="noopener">PyPI ↗</a></li>
+          <li><a href="https://registry.modelcontextprotocol.io/v0/servers?search=co.indigloo" rel="noopener">MCP Registry ↗</a></li>
+          <li><a href="https://cursor.directory/plugins/model-finder" rel="noopener">Cursor Directory ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Indigloo</h2>
+        <ul>
+          <li><a href="https://indigloo.co" rel="noopener">indigloo.co ↗</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span class="label">© <span id="year">2026</span> Indigloo Softwares Private Limited · MIT License</span>
+      <span class="label">No cookies · No analytics · No trackers on this site</span>
+    </div>
+  </div>
+</footer>
+<p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+</body>
+</html>

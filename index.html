@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self'; font-src 'self'; connect-src 'none'; manifest-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Model Finder · Find the cheapest AI model that passes your tests</title>
+<meta name="description" content="Free, local MCP server + Agent Skills that finds the cheapest AI model passing your own tests. Audits your repo, drafts evals, ranks models by cost per passing answer and writes cheapest-first routing. MIT.">
+<link rel="canonical" href="https://modelfinder.indigloo.co/">
+<meta name="theme-color" content="#f3f0e8">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="240x240" href="assets/img/thumbnail-240.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/geist-mono.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Model Finder by Indigloo">
+<meta property="og:title" content="Model Finder · Find the cheapest AI model that passes your tests">
+<meta property="og:description" content="Free, local MCP server + Agent Skills that finds the cheapest AI model passing your own tests. Audits your repo, drafts evals, ranks models by cost per passing answer and writes cheapest-first routing. MIT.">
+<meta property="og:url" content="https://modelfinder.indigloo.co/">
+<meta property="og:image" content="https://modelfinder.indigloo.co/assets/img/gallery-01-hero.png">
+<meta property="og:image:width" content="1270">
+<meta property="og:image:height" content="760">
+<meta property="og:image:alt" content="Model Finder: find the cheapest AI model that passes your own tests. A dot field showing the cheapest model that passes.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Model Finder · Find the cheapest AI model that passes your tests">
+<meta name="twitter:description" content="Free, local MCP server + Agent Skills that finds the cheapest AI model passing your own tests. Audits your repo, drafts evals, ranks models by cost per passing answer and writes cheapest-first routing. MIT.">
+<meta name="twitter:image" content="https://modelfinder.indigloo.co/assets/img/gallery-01-hero.png">
+<link rel="stylesheet" href="style.css">
+<script src="app.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Model Finder","applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Linux, Windows","description":"Free, local MCP server + Agent Skills that finds the cheapest AI model passing your own tests. Audits your repo, drafts evals, ranks models by cost per passing answer and writes cheapest-first routing. MIT.","url":"https://modelfinder.indigloo.co/","downloadUrl":"https://pypi.org/project/model-finder-mcp/","codeRepository":"https://github.com/Abhiindigloo/EvalHarness","license":"https://opensource.org/licenses/MIT","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Indigloo","url":"https://indigloo.co"}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Model Finder by Indigloo, home">
+      <img src="assets/img/mark-128.png" srcset="assets/img/mark-128.png 1x, assets/img/mark-256.png 2x" width="40" height="19" alt="">
+      <span class="brand-name">Model Finder</span>
+      <span class="brand-by">by Indigloo</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a class="btn btn-primary" href="#install"><span class="dot" aria-hidden="true"></span>Get started</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div class="hero-top">
+        <span class="label">Plate 01 &nbsp;·&nbsp; A field instrument for choosing models</span>
+        <a class="pill" href="https://pypi.org/project/model-finder-mcp/" rel="noopener"><span class="dot" aria-hidden="true"></span>Free · MIT · v1.3.5 on PyPI</a>
+      </div>
+      <div class="hero-grid">
+        <h1 class="display" id="hero-title">
+          <span class="line"><span>Find the cheapest</span></span>
+          <span class="line"><span class="d1">AI model that passes</span></span>
+          <span class="line"><span class="d2"><em class="sig">your</em> tests.</span></span>
+        </h1>
+        <div class="hero-side reveal d3">
+          <p class="lede">Model Finder is a free, local MCP server and Agent Skills. It audits the models your repo calls, drafts evals from your own prompts, ranks Claude, Gemini, OpenAI, Bedrock, Vertex and local models by <strong>cost per passing answer</strong>, then writes cheapest-first routing.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#install"><span class="dot" aria-hidden="true"></span>Install · uvx model-finder-mcp</a>
+            <a class="btn btn-ghost" href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+          <ol class="flow" aria-label="Workflow">
+            <li>Audit</li><li>Draft</li><li>Rank</li><li>Route</li>
+          </ol>
+        </div>
+      </div>
+
+      <figure class="figure reveal d2">
+        <div class="plate" data-film>
+          <video controls preload="none" playsinline muted poster="assets/img/gallery-01-hero.png" width="1920" height="1080"
+                 aria-label="Model Finder film, 29 seconds, no audio: a dot field, the four-step flow, illustrative cost bars and the install command.">
+            <source src="assets/video/model-finder-film.mp4" type="video/mp4">
+            <a href="assets/video/model-finder-film.mp4">Download the Model Finder film (MP4, 1.5 MB)</a>
+          </video>
+          <button class="play" type="button" aria-label="Play the 29-second Model Finder film">
+            <span class="play-icon" aria-hidden="true"><svg viewBox="0 0 14 16"><path d="M0 0l14 8-14 8z"/></svg></span>
+            Watch the film · 0:29
+          </button>
+        </div>
+        <figcaption class="plate-caption">
+          <span class="label">Fig. 1 · Cheapest that passes</span>
+          <span class="label">No audio · pass rates in the film are illustrative</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="marquee" aria-label="Providers and clients">
+      <div class="marquee-track">
+        <ul><li>Claude</li><li>Gemini</li><li>OpenAI</li><li>Amazon Bedrock</li><li>Vertex AI</li><li>Ollama &amp; local</li><li class="ring"><em>cost per passing answer</em></li><li>Claude Code</li><li>Cursor</li><li>Cline</li><li>Codex CLI</li><li>Gemini CLI</li><li>Copilot CLI</li><li>Claude Desktop</li><li class="ring"><em>cheapest-first routing</em></li></ul>
+        <ul aria-hidden="true"><li>Claude</li><li>Gemini</li><li>OpenAI</li><li>Amazon Bedrock</li><li>Vertex AI</li><li>Ollama &amp; local</li><li class="ring"><em>cost per passing answer</em></li><li>Claude Code</li><li>Cursor</li><li>Cline</li><li>Codex CLI</li><li>Gemini CLI</li><li>Copilot CLI</li><li>Claude Desktop</li><li class="ring"><em>cheapest-first routing</em></li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="At a glance">
+    <div class="wrap">
+      <dl class="ledger">
+        <div class="reveal"><dt>11</dt><dd>MCP tools, over local stdio</dd></div>
+        <div class="reveal d1"><dt>4</dt><dd>Agent Skills, plain Markdown</dd></div>
+        <div class="reveal d2"><dt>10<span class="sig">/</span>11</dt><dd>tools make no network calls</dd></div>
+        <div class="reveal d3"><dt>0</dt><dd>API keys needed by the server</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label"><span class="sig">02</span> How it works</p>
+        <h2 class="h2 reveal" id="how-title">Four steps, in <em>plain language</em>.</h2>
+        <p class="lede reveal d1">Ask from Claude Code, Cursor, Codex CLI, Gemini CLI or any MCP client. The assistant calls the tools; you approve anything that costs money.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-n">01</span>
+          <h3>Audit</h3>
+          <p>Lists every model ID and SDK your repo calls, with file:line locations, routes and hard-coded IDs. Never returns line content.</p>
+          <code>modelfinder_audit_models</code>
+        </li>
+        <li class="step reveal d1">
+          <span class="step-n">02</span>
+          <h3>Draft evals</h3>
+          <p>Turns your existing prompts and fixtures into eval examples, and drops anything with personal data or secrets.</p>
+          <code>modelfinder_draft_eval_examples</code><code>…_create_eval_config</code>
+        </li>
+        <li class="step reveal d2">
+          <span class="step-n">03</span>
+          <h3>Rank</h3>
+          <p>Runs your evals with your keys, after you confirm, and ranks models by pass rate, latency and cost per passing answer.</p>
+          <code>modelfinder_run_eval</code><code>…_rank_eval_results</code>
+        </li>
+        <li class="step reveal d3">
+          <span class="step-n">04</span>
+          <h3>Route</h3>
+          <p>Writes cheapest-first routing that escalates to a stronger model on failure: a standalone router plus a LiteLLM config.</p>
+          <code>modelfinder_generate_routing</code>
+        </li>
+      </ol>
+      <div class="prompt reveal">
+        <p class="label">Try asking</p>
+        <blockquote>Audit which AI models this repo uses, then draft evals from our prompts and test whether a cheaper model passes.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" id="proof" aria-labelledby="proof-title">
+    <div class="wrap">
+      <div class="proof-grid">
+        <div class="proof-copy">
+          <p class="label"><span class="sig">03</span> Cost per passing answer</p>
+          <h2 class="h2 reveal" id="proof-title">Cheapest <em>that passes.</em></h2>
+          <p class="italic-serif reveal d1">Not the cheapest model. The cheapest one that clears your bar.</p>
+          <p class="formula reveal d2">cost per passing answer =
+            <span class="frac"><span>monthly cost, incl. retries</span><span>answers that pass your checks</span></span></p>
+          <p class="lede reveal d3">A cheap model that fails half the time is not cheap. Model Finder sets the price of every candidate against your own pass threshold, so the ranking reflects what actually ships.</p>
+          <span class="badge reveal d4">Illustrative example · not a measurement</span>
+        </div>
+        <figure class="figure reveal d2">
+          <div class="frame">
+            <picture><source srcset="assets/img/gallery-03-cost-ranking.webp" type="image/webp"><img src="assets/img/gallery-03-cost-ranking.png" width="1270" height="760" alt="Illustrative ranking of six models by monthly cost per passing answer at a 90 percent threshold. Two cheaper models fall below the threshold; the cheapest model that passes is highlighted." loading="lazy" decoding="async"></picture>
+            <span class="badge">Illustrative</span>
+          </div>
+          <figcaption><strong>Illustrative.</strong> 100k requests a month, 800 tokens in and 200 out, 90% pass threshold. Pass rates are example inputs, not measurements; list prices from LiteLLM's public price table (19 Oct 2026). Run it on your own tests.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-ink" id="privacy" aria-labelledby="privacy-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label"><span class="sig">04</span> Private &amp; local</p>
+        <h2 class="h2 reveal" id="privacy-title">Runs on your machine. <em>Network only when <span class="sig">you</span> say so.</em></h2>
+        <p class="lede reveal d1">The MCP server is a single Python standard-library file with no dependencies. It talks to your assistant over stdio and nothing else, unless you start a paid eval run.</p>
+      </div>
+      <div class="privacy-grid">
+        <ul class="facts">
+          <li class="reveal"><div><strong>Local over stdio</strong><span>Python 3.9+ standard library. No hosted service, no account, no sign-in.</span></div></li>
+          <li class="reveal d1"><div><strong>The server needs no API keys</strong><span>Ten tools never read a key. Eval runs read only the env vars your config names.</span></div></li>
+          <li class="reveal d2"><div><strong>Never writes files</strong><span>Results go back to your assistant. Nothing is deployed and your active model is never changed.</span></div></li>
+          <li class="reveal d3"><div><strong>Sends nothing to Indigloo</strong><span>No telemetry, no analytics. Indigloo never sees your code, prompts or results.</span></div></li>
+          <li class="ring reveal d4"><div><strong>One opt-in tool calls providers</strong><span><code>modelfinder_run_eval</code> runs only with <code>confirm: true</code>, only against the models you list, with your own keys, capped at 50 calls by default (200 max).</span></div></li>
+        </ul>
+        <div class="toolboard reveal d2" aria-labelledby="tb-title">
+          <header><span class="label" id="tb-title">The 11 tools</span><span class="label"><span class="sig">10 of 11</span> make no network calls</span></header>
+          <ol>
+          <li><i aria-hidden="true"></i><span>modelfinder_audit_models</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_draft_eval_examples</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_create_eval_config</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_validate_eval_config</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_check_output</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_rank_eval_results</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_generate_routing</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_estimate_cost</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_estimate_memory</span><small>offline</small></li>
+          <li><i aria-hidden="true"></i><span>modelfinder_scan_sensitive_data</span><small>offline</small></li>
+          <li class="opt"><i aria-hidden="true"></i><span>modelfinder_run_eval</span><small>opt-in · network</small></li>
+          </ol>
+          <footer>Ten tools declare <code>openWorldHint: false</code>. Repository tools stay inside your workspace, skip <code>.env</code>, keys and credentials, and do not follow symlinks.</footer>
+        </div>
+      </div>
+      <p class="label reveal after-link"><a href="privacy.html">Read the privacy policy →</a> &nbsp; · &nbsp; <a href="security.html">Security design →</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label"><span class="sig">05</span> Compatibility</p>
+        <h2 class="h2 reveal" id="works-title">Works where you <em>already work.</em></h2>
+        <p class="lede reveal d1">Installs as a plugin with skills where the client supports it, and as plain MCP tools everywhere else. Any client that speaks MCP over stdio can run it.</p>
+      </div>
+      <ul class="clients">
+        <li class="reveal d1"><b>Claude Code</b><small>Plugin · skills + MCP</small></li>
+        <li class="reveal d2"><b>Cursor</b><small>Plugin · one-click MCP</small></li>
+        <li class="reveal d3"><b>Codex CLI</b><small>Plugin · skills + MCP</small></li>
+        <li class="reveal d4"><b>Gemini CLI</b><small>Extension · skills + MCP</small></li>
+        <li class="reveal d1"><b>Copilot CLI</b><small>Plugin · skills + MCP</small></li>
+        <li class="ring reveal d2"><b>Claude Desktop</b><small>MCP via uvx or .mcpb</small></li>
+        <li class="ring reveal d3"><b>Cline</b><small>MCP settings</small></li>
+        <li class="ring reveal d4"><b>VS Code, JetBrains, Windsurf</b><small>MCP settings</small></li>
+      </ul>
+      <div class="legend label" aria-hidden="true"><span><i></i>Skills + MCP tools</span><span><i class="ring"></i>MCP tools</span><span>+ any MCP client over stdio</span></div>
+      <div class="providers reveal">
+        <p class="label">Evaluates</p>
+        <ul aria-label="Model providers">
+          <li>Anthropic Claude</li><li>Google Gemini</li><li>OpenAI</li><li>Amazon Bedrock</li><li>Vertex AI</li><li>Ollama &amp; OpenAI-compatible local</li>
+        </ul>
+        <p>It can also estimate whether a local model's weights and KV cache fit your GPU, before you download anything.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" id="install" aria-labelledby="install-title">
+    <div class="wrap">
+      <div class="install-grid">
+        <div class="install-copy">
+          <p class="label"><span class="sig">06</span> Install</p>
+          <h2 class="h2 reveal" id="install-title">One line. <em>No pip install.</em></h2>
+          <p class="lede reveal d1">Run it with <a href="https://docs.astral.sh/uv/" rel="noopener">uv</a>, add it to your client's MCP settings, then ask your assistant to find you a cheaper model.</p>
+          <div class="big-cmd reveal d2">
+            <code id="cmd-hero"><span class="p">$ </span>uvx model-finder-mcp</code>
+            <button class="copy" type="button" data-target="cmd-hero" aria-label="Copy install command"><span>Copy</span></button>
+          </div>
+          <ul class="reveal d3">
+            <li>PyPI: <a href="https://pypi.org/project/model-finder-mcp/" rel="noopener">model-finder-mcp</a> · v1.3.5</li>
+            <li>MCP Registry: <a href="https://registry.modelcontextprotocol.io/v0/servers?search=co.indigloo" rel="noopener"><code>co.indigloo/model-finder</code></a></li>
+            <li>Source &amp; per-client guides: <a href="https://github.com/Abhiindigloo/EvalHarness#install" rel="noopener">github.com/Abhiindigloo/EvalHarness</a></li>
+          </ul>
+        </div>
+        <div class="term reveal d2">
+          <div class="tabs" role="tablist" aria-label="Install options">
+            <button role="tab" id="tab-mcp" aria-controls="panel-mcp" aria-selected="true">Any MCP client</button>
+            <button role="tab" id="tab-cc" aria-controls="panel-cc" aria-selected="false" tabindex="-1">Claude Code</button>
+            <button role="tab" id="tab-other" aria-controls="panel-other" aria-selected="false" tabindex="-1">Codex · Gemini · Copilot</button>
+          </div>
+          <div class="panel" role="tabpanel" id="panel-mcp" aria-labelledby="tab-mcp" tabindex="0">
+            <div class="panel-head"><span class="label">mcpServers · Claude Desktop, Cursor, Cline, Windsurf…</span>
+              <button class="copy" type="button" data-target="code-json" aria-label="Copy MCP JSON config"><span>Copy</span></button></div>
+<pre id="code-json">{
+  "mcpServers": {
+    "model-finder": {
+      "command": <span class="s">"uvx"</span>,
+      "args": [<span class="s">"model-finder-mcp"</span>]
+    }
+  }
+}</pre>
+            <p>Needs <code>uv</code>. Paid eval runs read API keys from the server's <code>env</code>, for example <code>OPENAI_API_KEY</code>; the other ten tools need none.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="panel-cc" aria-labelledby="tab-cc" tabindex="0">
+            <div class="panel-head"><span class="label">Plugin · skills + MCP tools</span>
+              <button class="copy" type="button" data-target="code-cc" aria-label="Copy Claude Code commands"><span>Copy</span></button></div>
+<pre id="code-cc"><span class="p">&gt; </span>/plugin marketplace add Abhiindigloo/EvalHarness
+<span class="p">&gt; </span>/plugin install model-finder@model-finder</pre>
+            <p>Installs the four skills and the MCP server together. Requires <code>python3</code> on your PATH.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="panel-other" aria-labelledby="tab-other" tabindex="0">
+            <div class="panel-head"><span class="label">Plugins &amp; extensions</span>
+              <button class="copy" type="button" data-target="code-other" aria-label="Copy CLI install commands"><span>Copy</span></button></div>
+<pre id="code-other"><span class="c"># Codex CLI</span>
+codex plugin marketplace add Abhiindigloo/EvalHarness
+codex plugin add model-finder@model-finder
+<span class="c"># Gemini CLI</span>
+gemini extensions install https://github.com/Abhiindigloo/EvalHarness
+<span class="c"># GitHub Copilot CLI</span>
+copilot plugin marketplace add Abhiindigloo/EvalHarness
+copilot plugin install model-finder@model-finder</pre>
+            <p>Cursor: install from <a href="https://cursor.directory/plugins/model-finder" rel="noopener">cursor.directory</a> or add the JSON config above.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-ink" id="plates" aria-labelledby="plates-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="label"><span class="sig">07</span> The plates</p>
+        <h2 class="h2 reveal" id="plates-title">A notebook for <em>choosing models.</em></h2>
+        <p class="lede reveal d1">The launch plates, drawn in the Quiet Instrument system: paper, graphite, ink and one signal colour. Scroll sideways.</p>
+      </div>
+      <div class="plates" tabindex="0" role="region" aria-label="Launch plates, scrollable">
+      <figure><picture><source srcset="assets/img/gallery-01-hero.webp" type="image/webp"><img src="assets/img/gallery-01-hero.png" width="1270" height="760" alt="Plate 01: Model Finder, find the cheapest AI model that passes your own tests, with a dot field of models and the cheapest passing one highlighted." loading="lazy" decoding="async"></picture><figcaption><span class="label">Plate 01</span><span class="label">Model Finder</span></figcaption></figure>
+      <figure><picture><source srcset="assets/img/gallery-02-how-it-works.webp" type="image/webp"><img src="assets/img/gallery-02-how-it-works.png" width="1270" height="760" alt="Plate 02: Audit, Draft, Rank and Route, with the MCP tool behind each step." loading="lazy" decoding="async"></picture><figcaption><span class="label">Plate 02</span><span class="label">How it works</span></figcaption></figure>
+      <figure><picture><source srcset="assets/img/gallery-03-cost-ranking.webp" type="image/webp"><img src="assets/img/gallery-03-cost-ranking.png" width="1270" height="760" alt="Plate 03, illustrative: six models ranked by monthly cost per passing answer against a 90 percent threshold." loading="lazy" decoding="async"></picture><figcaption><span class="label">Plate 03</span><span class="label">Cost per passing answer · illustrative</span></figcaption></figure>
+      <figure><picture><source srcset="assets/img/gallery-04-private-local.webp" type="image/webp"><img src="assets/img/gallery-04-private-local.png" width="1270" height="760" alt="Plate 04: runs locally over stdio, no keys for the server, 10 of 11 tools make no network calls, nothing sent to Indigloo." loading="lazy" decoding="async"></picture><figcaption><span class="label">Plate 04</span><span class="label">Private and local</span></figcaption></figure>
+      <figure><picture><source srcset="assets/img/gallery-05-works-where-you-work.webp" type="image/webp"><img src="assets/img/gallery-05-works-where-you-work.png" width="1270" height="760" alt="Plate 05: supported clients including Claude Code, Cursor, Cline, Claude Desktop, Codex CLI, Gemini CLI and any MCP client." loading="lazy" decoding="async"></picture><figcaption><span class="label">Plate 05</span><span class="label">Works where you work</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section final" aria-labelledby="final-title">
+    <div class="wrap">
+      <img class="mark reveal" src="assets/img/mark-256.png" width="120" height="57" alt="">
+      <h2 class="display reveal d1" id="final-title">Test the cheaper model. <em>With your own tests.</em></h2>
+      <div class="cta-row reveal d2">
+        <a class="btn btn-primary" href="#install"><span class="dot" aria-hidden="true"></span>Get started</a>
+        <a class="btn btn-ghost" href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">Star on GitHub <span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer on-ink">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Model Finder by Indigloo, home">
+          <img src="assets/img/mark-128.png" srcset="assets/img/mark-128.png 1x, assets/img/mark-256.png 2x" width="40" height="19" alt="">
+          <span class="brand-name">Model Finder</span>
+          <span class="brand-by">by Indigloo</span>
+        </a>
+        <p>A free, local MCP server and Agent Skills that find the cheapest AI model passing your own tests. Open source, MIT licensed.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#install">Install</a></li>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness#readme" rel="noopener">Documentation ↗</a></li>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness/blob/main/CHANGELOG.md" rel="noopener">Changelog ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get it</h2>
+        <ul>
+          <li><a href="https://github.com/Abhiindigloo/EvalHarness" rel="noopener">GitHub ↗</a></li>
+          <li><a href="https://pypi.org/project/model-finder-mcp/" rel="noopener">PyPI ↗</a></li>
+          <li><a href="https://registry.modelcontextprotocol.io/v0/servers?search=co.indigloo" rel="noopener">MCP Registry ↗</a></li>
+          <li><a href="https://cursor.directory/plugins/model-finder" rel="noopener">Cursor Directory ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Indigloo</h2>
+        <ul>
+          <li><a href="https://indigloo.co" rel="noopener">indigloo.co ↗</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span class="label">© <span id="year">2026</span> Indigloo Softwares Private Limited · MIT License</span>
+      <span class="label">No cookies · No analytics · No trackers on this site</span>
+    </div>
+  </div>
+</footer>
+<p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+</body>
+</html>
